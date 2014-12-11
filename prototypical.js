@@ -2,9 +2,9 @@ console.log("Hello from Prototypical");
 
 function Thing(initialStuff) {
     if (typeof initialStuff !== "object") initialStuff = prototypical.quickGet(initialStuff)
-    var keys = Object.keys(initialStuff);
-    for (var i = keys.length - 1; i >= 0; i--) {
-        this[keys[i]] = initialStuff[keys[i]]
+    var properties = Object.getOwnPropertyNames(initialStuff);
+    for (var i = properties.length - 1; i >= 0; i--) {
+        this[properties[i]] = initialStuff[properties[i]]
     };
 }
 
